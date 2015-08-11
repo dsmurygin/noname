@@ -3,8 +3,8 @@ class db{
     private static $link;
     public $className = 'stdClass';
 
-    function __construct(){
-        self::$link = new PDO('mysql:host=localhost;dbname=audiobooks;charset=utf8', 'web', 'Noname1990', array(
+    public static function connect(){
+        self::$link = new PDO('mysql:host=localhost;dbname=audiobooks;charset=utf8', 'test', 'test', array(
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_CLASS,
             PDO::ATTR_PERSISTENT         => true

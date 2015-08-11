@@ -1,0 +1,360 @@
+body {overflow: auto; height: 100%;
+    margin: 0; padding: 0; line-height: 1.5em; background: #fff; font-size: 0.75em;  font-weight: normal;
+    font-family: "Lucida Grande", Arial, tahoma, verdana, sans-serif;}
+
+a:link, a:visited { color: #22260a; text-decoration: none; font-weight: bold;}
+a:active, a:hover { color: #22260a; text-decoration: underline;}
+
+.cleaner { clear: both; width: 100%; height: 0; font-size: 0;  }
+
+p { margin: 0; padding: 0; }
+
+img { margin: 0; padding: 0; border: none; }
+
+h1{display: block; margin: 0; padding: 0.4em 0 0 0; font-size: 2.083em; color: #ffffff;}
+
+h2{padding: 0 0 0.1125em 0; margin: 0 0 0.2em 0; color: #2B587A;}
+
+h3{padding: 0.1875em 0 0.3125em 0; margin: 0 0 1em 0; color: #ffffff; font-weight: bold; font-size: 1.2em; border-bottom: 1px solid #ffffff;}
+
+.Container{border: solid 2px #535353; margin-right: auto; margin-left: auto; width: 100%; background-color: #656565; max-width: 1160px;position: relative; box-sizing:border-box;}
+
+#top_bar { height: 6.25em; background: #656565;}
+
+#header {float: left; margin-top: 0.6em; padding: 0 0 1em 0.85em;}
+
+#siteLogo{float: left; margin: 7px 5px 0 0;}
+#siteLogo:hover{cursor: pointer}
+
+#header a{font-family: "Comic Sans MS"; color: #ffffff;white-space:nowrap;}
+
+#header a:hover{text-decoration: none;}
+
+#header a span {display: block; line-height: 1; margin: 7px 0 0 0; font-size: 0.85em; color: #ffffff;white-space:nowrap;}
+
+.userlogin{color: #ffffff; font-size: 0.95em; float: right; background-color: #888888; margin: 3px 0 3px 0; height: 5.9em; width: 17em; padding: 0 7px 7px 7px; border: solid 1px #444444;}
+
+.userlogin a:hover{cursor: pointer; color: #ffffff; text-decoration: underline;}
+
+.userlogin input{float: left; margin-top: 5px;}
+
+.input {box-shadow: inset 0 0 3px black; margin-top: 5px; height: 18px; background-color: #b7b7b7; text-align: center; border: 0; color: #ffffff;}
+
+.button{text-shadow: 0 0 3px black; margin-top: 5px; height: 25px; background-color: #b7b7b7; text-align: center; border: 0; color: #ffffff;}
+
+.button:hover{box-shadow: 0 0 3px black; cursor: pointer;}
+
+.userPanel{color: #ffffff; font-size: 0.95em; float: right; background-color: #888888; height: 5.9em; width: 17em; border: solid 1px #444444; margin: 3px 3px 3px 0; padding: 7px 7px 0 7px;}
+
+.userPanel p{line-height: 1.1em;}
+
+.userPanel a:hover{color: #ffffff; text-decoration: underline;}
+
+.userImageHeader{margin-right: 10px; float: left; height: 60px; width: 60px;}
+
+.regForm{position: fixed; top: 50%; left: 50%; margin: -125px 0 0 -125px; width: 330px; height: 180px; color: #ffffff; background-color: #888; border: 2px solid #555; box-shadow: 0 0 5px black;z-index: 10;}
+
+.regForm table{margin: 15px 0 0 15px;}
+
+.regForm .input{margin-top: 5px; width: 200px;}
+
+.regForm .button{margin-left: 115px;}
+
+#closeReg{color: #000000; text-align: center; cursor: pointer; margin: 5px 5px 0 0; width: 25px; height: 25px; float: right; border: solid 1px #444; border-radius: 3px;}
+
+#closeReg:hover{box-shadow: 0 0 3px #000000;}
+
+#menu {clear: both; height: 50px; border-top: solid 1px #444444; background-color: #888888;}
+
+#menu div{float: left; padding: 14px 0 0 10px;}
+
+#menu div input{height: 22px; background-color: #b7b7b7; border-radius: 3px; text-align: center; border: 0; color: #ffffff;float: left;width: 13.5em}
+
+#menu ul {padding: 12px 0 0 0; margin: 0  0  0 200px; list-style: none;}
+
+#menu ul li{padding: 0; margin: 0; display: inline;}
+
+#menu ul li a{float: left; display: block; height: 23px; padding: 5px 15px 0 15px; margin-right: 10px; font-size: 1em; text-decoration: none; color: #ffffff;}
+
+#menu li a:hover{position: relative; background: url(/images/menu_hover_right.jpg) right center no-repeat;}
+
+#menu li a:hover span, #menu li .current span{position: absolute; width: 5px; height: 28px; top: 0; left: 0; background: url(/images/menu_hover_left.jpg) no-repeat;}
+
+#content {margin: 0; background-color: #888888; position: relative; display: block;}
+
+#content_column {min-height:300px; position:relative; display: block; border-top-right-radius: 10px; border-top-left-radius: 10px;  background-color: #ffffff; width: 63%; padding: 10px; margin: 5px 0 0 16.5%;
+    border-top: solid 2px #656565;  border-left: solid 2px #656565; border-right: solid 2px #656565;}
+
+#loading{margin: 50px 50% 0 50%;}
+
+#loading-page{
+    margin: 0 50%;
+}
+
+.post_box { display: block; color: #000000; padding: 10px; margin-bottom: 15px; min-height: 205px}
+
+.post_box_border{border-bottom: dotted 1px #000000;}
+
+.post_title {}
+
+.post_box a{color: #2B587A; font-style: normal; text-decoration: none;}
+
+.post_box a:hover{text-decoration: underline;}
+
+.post_box h2 a,
+.post-title{color: #1B485A; font-size: 16px;}
+
+.post_box p{}
+
+.midle-post{
+    min-height: 265px;
+}
+
+.info{color: #2B587A; margin-left: 170px; padding: 0 5px;}
+
+.info p{color: #000000;}
+.info p b{color: #2B587A;}
+
+.vote{padding: 3px; display: none; float: right; width: 18px; height: 185px; background-color: #e4e4e4; margin-right: -30px; margin-top: -60px; border: solid 1px #888; border-radius: 7px; font-size: 13px; cursor: default;}
+
+.vote span{cursor: pointer;}
+
+.vote span:hover{ text-shadow: 0 0 1px #444;}
+
+.rating{margin-right: 5px; width: 60px; height: 40px; padding: 5px; text-align: center; float: right; color: #2B587A; background-color: #e4e4e4; border: solid 1px #888; border-radius: 7px; font-size: 10px;}
+
+.rating:hover{cursor: pointer;}
+
+.rating:hover >.vote{ display: block;}
+
+.rating b{ font-size: 14px;}
+
+.post_info {margin: 0; padding: 0; color: #22260a; font-size: 12px;}
+
+.post_info a {font-weight: bold; color: #22260a;}
+
+.post_info a:hover {text-decoration: none; color: #ffffff;}
+
+
+.bookPlay{float: left; cursor: pointer;}
+
+.bookPlay img {width: 165px; height: 175px; z-index: 0; margin: 0}
+
+.bookPlayIcon{position: absolute; float: left; z-index: 10;  width: 165px; height: 175px; opacity: 0.2;transition: 1s;}
+
+.bookControls:hover >.bookPlayIcon{ opacity: 0.9;}
+
+.bookControls{cursor: pointer; width: 165px;  color: #fff; margin-top: 3px}
+
+.bookControls a{margin-top: -3px}
+
+.bookPlay a{
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+    background: #888;
+    margin-bottom:5px;
+    border-radius: 3px;
+    text-align:center;
+}
+
+.bookPlay a{
+    color: #fff;
+}
+
+.cycle{
+    cursor: default;
+    font-weight: bold;
+}
+
+.cycleRows{margin-left: 20px;}
+
+.categories {position:relative; float:left;line-height: 1; background-color: #888888; color: #e4e4e4; width: 14%; padding: 5px 15px 0 15px;}
+
+.categories .ads_180_90 img{margin-bottom: 10px;}
+
+.categories .box {margin-bottom: 20px;}
+
+.categories form {margin: 0; padding: 0;}
+
+.top20 {position:relative;line-height: 1; background-color: #888888; float: right; color: #e4e4e4; width: 16%; padding: 5px 10px 0 10px; display: block}
+
+.top20 .ads_180_90 img{margin-bottom: 10px;}
+
+.top20 .box {margin-bottom: 20px;}
+
+.top20 form {margin: 0; padding: 0;}
+
+.side_menu {list-style: none; padding: 0; margin: 0 0 0 0;}
+
+.side_menu li {padding: 0;margin: 5px 0;font-weight: bold; color: #ffffff}
+
+.side_menu li a { padding: 3px 0; color: #ffffff;font-size: 11px;}
+
+.side_menu li a:hover {color: #ffffff; text-decoration: underline;}
+
+#player{width:100%; max-width: 1152px; left: 0; right: 0; bottom: 0; position: fixed; background-color: #777; border: solid 1px #444; padding: 3px; box-shadow: 0 0 5px #444; margin:0 auto; z-index: 100}
+
+#controls{ margin: 5px;}
+
+#playerInfo{color: #ffffff; text-shadow: 0 0 5px black; margin: 3px; cursor: default;}
+
+#playPause{margin: 15px 10px 0 0; float: left; cursor: pointer;}
+
+#timeBar{margin: 5px 5px 0 5px; float: left; background-color: #666; border: solid 1px #444; border-radius: 5px; box-shadow: 0 0 1px black; width: 82%; height: 8px; cursor: pointer;}
+
+#progressBar{background-color: #c7c7c7; box-shadow: 0 0 1px black; border-radius: 3px; width: 0; margin-top: 1px; margin-left: 1px; height: 6px;}
+
+.time{ color: #ffffff; font-size: 10px; text-shadow: 0 0 3px black; cursor: default;}
+
+.icon-play {background: url(/images/iconPlay.png) no-repeat; width: 20px; height: 24px; display: block;}
+
+.icon-pause {background: url(/images/iconPause.png) no-repeat; width: 20px; height: 24px; display: block;}
+
+.infoIcon{margin: 0 2px 0 2px; float: right; height: 15px; width: 15px; cursor: pointer; display: none}
+
+#bookIcon{float: left; margin: 0 7px 0 0; border: 0px; width: 50px; height: 50px;}
+
+#playerInfo{cursor: pointer;}
+
+#footer{border-top: 1px solid #555; background-color: #656565;}
+
+#footer p{line-height: 1.1; font-size: 11px; color: #ffffff; max-width: 747px; width: 70%; text-align: center; margin-left: 17%;}
+
+#podPlayer{height: 60px;}
+
+.icon-search {background: url(/images/iconSearch.png) no-repeat; width: 20px; height: 20px; display: block; margin: 0 0 -20px 5px; cursor: pointer;float: right;max-width: 20px;max-height: 20px}
+
+@media (max-width:1300px){
+    #content_column{margin-left: 17%}
+    #footer p{width: 65%}
+    #content_column {width: 62%}
+    #timeBar{width: 80%}
+}
+@media (max-width:1200px){
+    #content_column {width: 62%;margin-left: 18%}
+    .top20{width: 14.5%}
+    .categories{width: 14.5%}
+
+}
+
+@media (max-width:1100px){
+    #content_column{width: 79%;}
+    .Container{width: 100%;margin: 0}
+    #content{width: 100%}
+    .top20{display: none}
+    #player{width: 99%;
+        max-width: none;}
+    #footer p{width: 80%}
+}
+@media (max-width:1050px){
+    #content_column {width: 77%;margin-left: 19%}
+    #timeBar{width: 79%}
+}
+@media (max-width:950px){
+    #content_column {width: 75%;margin-left: 20.5%}
+    #timeBar{width: 78%}
+}
+@media (max-width:900px){
+    #content_column {width: 75%;margin-left: 21.5%}
+    #timeBar{width: 76%}
+}
+@media (max-width:850px){
+    #content_column {width: 73%;margin-left: 24%}
+    #timeBar{width: 74%}
+}
+@media (max-width:800px){
+    #content_column{width: 71%; margin-left: 25%}
+    .post_box img {width: 145px; height: 155px; margin-right: 10px;}
+    .bookControls{width: 143px}
+    .bookPlay a{width: 145px}
+    #footer p{width: 70%}
+    .info{margin-left: 150px;}
+    #timeBar{width: 73%}
+}
+@media (max-width:750px){
+    #content_column {width: 69%;margin-left: 26%}
+    #timeBar{width: 71%}
+}
+@media (max-width:700px){
+    #content_column{width: 67%;}
+    #menu ul li a{padding: 5px 5px 0 5px}
+    #timeBar{width: 69%}
+}
+@media (max-width:640px){
+    .userPanel {float: left; margin: 0;width: 97.5%; padding: 0}
+    .userlogin{float: left; margin: 0;width: 97.5%}
+    .input{width: 97%}
+    #menu{width: 100%}
+    #menu div{width: 98%}
+    #menu div input{width: 91%;}
+    .icon-search{margin: 0 0 0 5px}
+    #menu ul{margin: 0;}
+    .categories{position:relative; display: block; float: none; width: 94%; line-height:1.5; overflow-wrap: break-word;}
+    .side_menu li {display: inline}
+    .side_menu li a {display: inline;margin-right: 20px}
+    #content_column{width: 95.2%;margin: 0}
+    .rating{display: none}
+    .info{margin-left: 0;}
+    #timeBar{width: 64%;}
+    #playPause{margin-left: 5px}
+    .bookPlay{margin-right: 10px;}
+}
+@media (max-width:570px){
+    #content_column{width: 94%}
+    .userlogin{width: 96.3%}
+    .userPanel{width: 96.3%}
+    #menu{width: 99%}
+    #menu div{width: 95%}
+    .categories{width: 92%}
+    .Container{border: 0}
+    #timeBar{width: 60%}
+
+}
+@media (max-width:530px){
+    #menu{width: 99.2%}
+    #timeBar{width: 57.5%}
+}
+@media (max-width:500px){
+    .post_box img {width: 110px; height: 120px;}
+    .bookControls{width: 110px}
+    .bookPlay a{width: 110px}
+    .userlogin{width: 96%}
+    .userPanel{width: 96%}
+    .bookControls{width: 108px;height: auto}
+    #timeBar{width: 53%}
+    #menu div{width: 95%;}
+}
+@media (max-width:440px){
+    .userlogin{width: 95.5%;}
+    .userPanel{width: 95.5%}
+    #menu{width: 100%}
+    #menu div{padding-left: 5px}
+    #bookIcon{display: none}
+    #timeBar{width: 90%;float: none;margin-left: 30px}
+    #content_column{width: 93%}
+}
+@media (max-width:400px){
+    .categories{width: 90%;}
+    #siteLogo{display: none}
+    #menu div input{width: 85%;}
+    #content_column{width: 92%}
+    #saveTime, #addBookmark, #playerDownload{display: none}
+}
+@media (max-width:360px){
+    .userlogin{width: 94.8%;}
+    .userPanel{width: 94.8%}
+    .bookPlay{float: none}
+    .post_box img {width: 165px;height: 175px;}
+    .bookControls{width: 165px}
+    .bookPlay a{width: 165px}
+}
+@media (max-width:317px){
+    .userlogin{width: 94%}
+    .userPanel{width: 94%}
+    .categories{width: 89%}
+    #content_column{width: 90%}
+    #header a span{overflow-wrap: break-word; white-space: normal;}
+}
