@@ -42,7 +42,7 @@
                 <h3>Жанры</h3>
                 <ul class="side_menu">
                     <?php foreach ($categories as $cat): ?>
-                        <li><a onclick=\'showContent("category","<?php echo $cat->category_url ?>","");return false\' href="/category/<?php echo $cat->category_url ?>"><?php echo $cat->category_name ?></a></li>
+                        <li><a onclick="showContent("category","<?php echo $cat->category_url ?>","");return false" href="/category/<?php echo $cat->category_url ?>"><?php echo $cat->category_name ?></a></li>
                     <?php endforeach?>
                 </ul>
             </div>
