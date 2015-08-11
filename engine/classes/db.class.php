@@ -12,16 +12,13 @@ class db{
 
     public static function query($sql, $params = null) {
         if (is_null($params)){
-            echo '1';
             $query = self::$link->query($sql);
-            $res = $query->fetchAll();
         }
         else{
-            echo '1';
             $query = self::$link->prepare($sql);
             $query->execute($params);
-            $res = $query->fetchAll();
         }
-        return $res;
+
+        return $query->fetchAll();
     }
 }
