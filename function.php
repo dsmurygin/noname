@@ -16,5 +16,6 @@ function getAllCategories(){
 
 function getTop20(){
     $db = new db;
+    $db->className = 'top20';
     return $db->query('SELECT book_name, book_url, book_votes, book_id FROM books ORDER by book_votes DESC LIMIT 0,20');
 }
