@@ -55,11 +55,11 @@
                     <?php $i = 1; foreach ($top20 as $top): ?>
                         <li><?php echo $i ?>. <a rel="nofollow" href="/book/<?php echo $top->book_url ?>" onclick="showContent('book','<?php echo $top->book_url ?>','');return false"><?php echo $top->book_name ?> -
                             <?php
-                            $i = 0;
+                            $j = 0;
                             foreach ($top->authors as $author):
                                 echo $author->author_name;
-                                $i++;
-                                if ($i !== count($author)){
+                                $j++;
+                                if ($j !== count($author)){
                                     echo ', ';
                                 }
                             endforeach ?>
