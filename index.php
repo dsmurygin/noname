@@ -5,11 +5,11 @@ ini_set('display_startup_errors', 1);
 require_once __DIR__ . '/engine/classes/db.class.php';
 db::connect();
 require_once __DIR__ . '/function.php';
-//require_once __DIR__ . '/engine/classes/category.class.php';
-//require_once __DIR__ . '/engine/classes/post.class.php';
 
+$a = new content;
+var_dump($a);
 
-$categories = getAllCategories();
+/*$categories = getAllCategories();
 $top20 = getTop20();
 $db = new db();
 $db->className = 'post';
@@ -25,3 +25,4 @@ $content = json_decode($content);
 
 include __DIR__ . '/engine/view/index.php';
 
+*/
