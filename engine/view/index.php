@@ -70,7 +70,7 @@
             </div>
         </div>
         <div id="content_column">
-            <?php echo $content->content; ?>
+            <?php echo $content['content']; ?>
         </div>
         <div class="cleaner"></div>
     </div>

@@ -4,7 +4,7 @@ class db{
     public $className = 'stdClass';
 
     public static function connect(){
-        self::$link = new PDO('mysql:host=localhost;dbname=audiobooks;charset=utf8', 'test', 'test', array(
+        self::$link = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'test', 'test', array(
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_CLASS,
             PDO::ATTR_PERSISTENT         => true

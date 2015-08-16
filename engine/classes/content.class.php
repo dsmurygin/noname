@@ -2,6 +2,7 @@
 
 class content
 {
+    protected $pageQuery;
     public $data = [];
 
     public function __construct()
@@ -9,7 +10,7 @@ class content
         if (isset($_REQUEST['page'])) {
             $this->pageQuery = ' LIMIT ' . (((int)$_REQUEST['page'] - 1) * 10) . ',10';
         } else {
-            $this->pageQuery = ' LIMIT 0,10';
+            $this->pageQuery = ' LIMIT 0,15';
         }
 
         if (isset($_REQUEST['book'])){
