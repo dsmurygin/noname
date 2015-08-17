@@ -5,6 +5,36 @@ class content
     protected $pageQuery;
     public $data = [];
 
+/*if($_REQUEST['category']) {
+$documentTitle = 'Аудиокниги по жанру '.$row['category_name'].' слушать онлайн';
+$documentDescription .= '- аудиокниги по жанру '.$row['category_name'];
+$documentKeywords .= ', жанр , '.$row['category_name'];
+}
+else if($_REQUEST['author']) {
+    $documentTitle = 'Аудиокниги автора ' . $row['author_name'] . ' слушать онлайн';
+    $documentDescription .= '- аудиокниги автора ' . $row['author_name'];
+    $documentKeywords .= ', автор , ' . $row['author_name'];
+}
+else if($_REQUEST['publisher']){
+    $documentTitle = 'Аудиокниги издательства ' . $row['publisher_name'] . ' слушать онлайн';
+    $documentDescription .= '- аудиокниги издательства ' . $row['publisher_name'];
+    $documentKeywords .= ', издательство , ' . $row['publisher_name'];
+}
+else if($_REQUEST['year']){
+    $documentTitle = 'Аудиокниги '.$_REQUEST['year'].' года слушать онлайн';
+    $documentDescription .= '- аудиокниги '.$_REQUEST['year'].' года';
+    $documentKeywords .= ', '.$_REQUEST['year'].' года';
+}
+else if(isset($_REQUEST['voice'])){
+    $documentTitle = 'Аудиокниги исполнителя ' . $row['voice_name'] . ' слушать онлайн';
+    $documentDescription .= '- аудиокниги в исполнении ' . $row['voice_name'];
+    $documentKeywords .= ', '.$row['voice_name'] . ', исполнитель , озвучил, озвучка';
+}
+else{
+    $documentTitle = 'Аудиокниги слушать онлайн бесплатно';
+    $documentDescription = 'Слушать аудиокниги онлайн. Огромная коллекция. Ежедневное обновление. Возможность сохранения времени прослушивания и бесплатного скачивания аудиокниг.';
+}*/
+
     public function __construct()
     {
         if (isset($_REQUEST['page'])) {
@@ -14,7 +44,12 @@ class content
         }
 
         if (isset($_REQUEST['book'])){
-            $this->content = 'BOOKS';
+            $db = new db;
+            $db->className = 'post';
+            $this->content = $db->query('SELECT * FROM books b, publishers p WHERE b.publisher_id = p.publisher_id AND b.book_url = :book',[':book' => $_REQUEST['book']]);
+            $this->title = 'Аудиокнига ' . $this->content->book_name . ' - ' . $authors['authors'] . ' слушать онлайн';
+            $documentDescription = 'Аудиокнига ' . $row['book_name'] . ' автора ' . $authors['authors'] . ' слушать онлайн бесплатно, без регистрации';
+            $documentKeywords .= ', ' . $authors['authors'] . ' , ' . $row['book_name'];
         }
 
         else if(isset($_REQUEST['category'])){
@@ -74,6 +109,19 @@ class content
             $db->className = 'post';
             $this->content = $db->query('SELECT * FROM books b, publishers p WHERE b.publisher_id = p.publisher_id ORDER BY b.book_priority DESC' . $this->pageQuery);
         }
+
+        if (count($this->content)<10){
+            $this->eof = true;
+        }
+        else{
+            $this->eof = false;
+        }
+
+        if (count($this->content) == 0){
+            $this->found = false;
+        }
+
+        else $this->found = true;
     }
 
     public function __set($name,$value){
@@ -82,5 +130,16 @@ class content
 
     public function  __get($name){
         return $this->data[$name];
+    }
+
+    public function listAuthors(){
+        $i = 1;
+        foreach ($this->content->authors as $author){
+            $this->listAuthors = $author->author_name;
+            if ($i !== count($this->content->authors)){
+                $this->listAuthors .= ', ';
+                $i++;
+            }
+        }
     }
 }

@@ -5,7 +5,9 @@ ini_set('display_startup_errors', 1);
 require_once __DIR__ . '/function.php';
 db::connect();
 $data = new content;
-
+$data->listAuthors();
+echo $data->listAuthors;
+/*
 if (isset($INDEX)){
     $content = [];
     ob_start();
@@ -21,4 +23,4 @@ else{
     $content['content'] = ob_get_contents();
     ob_end_clean();
     echo json_encode($content);
-}
+}*/
