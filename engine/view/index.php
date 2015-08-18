@@ -4,9 +4,9 @@
     <?php
     echo '<meta charset="utf-8">';
     echo'
-    <title>'.$content->title.'</title>
-    <meta name = "description" content="'.$content->description.'">
-    <meta name = "keywords" content="'.$content->keywords.'">';
+    <title>'.$content['title'].'</title>
+    <meta name = "description" content="'.$content['description'].'">
+    <meta name = "keywords" content="'.$content['keywords'].'">';
     ?>
     <meta name=viewport content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/style.css?215">
@@ -21,7 +21,7 @@
         </div>
         <!--noindex-->
         <?php
-        include 'login.php';
+        //include 'login.php';
         ?>
         <!--/noindex-->
         <div id="menu">

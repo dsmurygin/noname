@@ -8,11 +8,9 @@ $INDEX = true;
 require_once __DIR__ . '/function.php';
 db::connect();
 
-$categories = getAllCategories();
-$top20 = getTop20();
-$db = new db();
-$db->className = 'post';
 $content = include('showContent.php');
 
+$categories = getAllCategories();
+$top20 = getTop20();
 
 include __DIR__ . '/engine/view/index.php';

@@ -46,10 +46,11 @@ else{
         if (isset($_REQUEST['book'])){
             $db = new db;
             $db->className = 'post';
-            $this->content = $db->query('SELECT * FROM books b, publishers p WHERE b.publisher_id = p.publisher_id AND b.book_url = :book',[':book' => $_REQUEST['book']]);
-            $this->title = 'Аудиокнига ' . $this->content->book_name . ' - ' . $authors['authors'] . ' слушать онлайн';
-            $documentDescription = 'Аудиокнига ' . $row['book_name'] . ' автора ' . $authors['authors'] . ' слушать онлайн бесплатно, без регистрации';
-            $documentKeywords .= ', ' . $authors['authors'] . ' , ' . $row['book_name'];
+            $this->content = $db->query('SELECT * FROM books b, publishers p WHERE b.publisher_id = p.publisher_id AND b.book_url = :book',[':book' => $_REQUEST['book']])[0];
+            $this->listAuthors();
+            $this->title = 'Аудиокнига ' . $this->content->book_name . ' - ' . $this->listAuthors . ' слушать онлайн';
+            $this->description = 'Аудиокнига ' . $this->content->book_name . ' автора ' . $this->listAuthors . ' слушать онлайн бесплатно, без регистрации';
+            $this->keywords = ', ' . $this->listAuthors . ' , ' . $this->content->book_name;
         }
 
         else if(isset($_REQUEST['category'])){
@@ -134,8 +135,9 @@ else{
 
     public function listAuthors(){
         $i = 1;
+        $this->listAuthors = '';
         foreach ($this->content->authors as $author){
-            $this->listAuthors = $author->author_name;
+            $this->listAuthors .= $author->author_name;
             if ($i !== count($this->content->authors)){
                 $this->listAuthors .= ', ';
                 $i++;

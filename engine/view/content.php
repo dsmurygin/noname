@@ -1,4 +1,4 @@
-<?php foreach ($data->data['content'] as $post): ?>
+<?php foreach ($data->content as $post): ?>
 <?php
     $categories = '';
     $authors = '';
