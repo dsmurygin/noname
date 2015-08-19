@@ -21,7 +21,7 @@
         </div>
         <!--noindex-->
         <?php
-        //include 'login.php';
+        require_once __DIR__. '/../../login.php';
         ?>
         <!--/noindex-->
         <div id="menu">
@@ -76,7 +76,7 @@
     </div>
 
     <?php
-    include 'player.php';
+    require_once __DIR__. '/../../player.php';
     ?>
     <div id="footer"><p>Рады приветствовать вас на нашем сайте онлайн аудиокниг.
             У нас реализована функция автоматического сохранения времени воспроизведения аудиокниг.

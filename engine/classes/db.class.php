@@ -12,6 +12,9 @@ class db{
     }
 
     public function query($sql, $params = []) {
+        var_dump($sql);
+        var_dump($params);
+
         $query = self::$link->prepare($sql);
         $query->execute($params);
 

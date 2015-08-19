@@ -1,33 +1,41 @@
 <?php
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
+require_once __DIR__.'/function.php';
+
 $image = "/images/bookIcon.png";
 $info = "<b>Выберите интересующею вас аудиокнигу и она откроется в этом плеере</b>";
 $infoAttr = "";
 $book = "";
 $src = '';
+$db = new db;
 if (isset($_SESSION["user"])) {
-    $query=$link->query('SELECT b.book_id, u.user_lastbook, b.book_name, b.book_url,us.time FROM users u, books b, users_saves us
-                        WHERE u.user_lastbook = b.book_id AND us.id_user=u.user_id AND us.id_book=b.book_id AND user_id='.$_SESSION["user"]);
-    if($query->num_rows == 1) {
-        $row = mysqli_fetch_assoc($query);
-        $time = $row["time"];
+    $query = $db>query('SELECT b.book_id, u.user_lastbook, b.book_name, b.book_url,us.time FROM users u, books b, users_saves us
+                        WHERE u.user_lastbook = b.book_id AND us.id_user=u.user_id AND us.id_book=b.book_id AND user_id = :id',[':id' =>$_SESSION["user"]]);
+    if(count($query) == 1) {
+        $time = $query->time;
     }
 }
-else if($_COOKIE['idBook']){
-    $query=$link->query('SELECT book_id,book_name,book_url FROM books WHERE book_id = "'.$_COOKIE['idBook'].'"');
-    if ($query->num_rows ==1){
-        $row=mysqli_fetch_assoc($query);
+else if(isset($_COOKIE['idBook'])){
+    $query = $db->query('SELECT book_id,book_name,book_url FROM books WHERE book_id = :id',[':id' => $_COOKIE['idBook']]);
+    if (count($query) ==1){
         $time = $_COOKIE['time'];
     }
 }
 else if (isset($_REQUEST['book'])){
-    $query = $link->query('SELECT book_id, book_name, book_url FROM books WHERE book_url = "'.$_REQUEST['book'].'"');
-    if ($query->num_rows == 1){
-        $row = mysqli_fetch_assoc($query);
+    $query = $db->query('SELECT book_id, book_name, book_url FROM books WHERE book_url = :id' , [':id' => $_REQUEST['book']]);
+    var_dump($query);
+    if (count($query) == 1){
         $time = 0;
     }
 }
+var_dump($query);
+/*
 if (!empty($row)){
-    $queryAuthor = $link->query('SElECT a.author_name,a.author_url FROM books b, authors a, books_authors ba WHERE ba.book_id = b.book_id AND ba.author_id = a.author_id AND b.book_id =' . $row["book_id"]);
+    $Authors = new authors();
+
     if ($queryAuthor->num_rows == 1) {
         $authors = '';
         $rowAuthor = mysqli_fetch_assoc($queryAuthor);
@@ -69,3 +77,4 @@ if (!empty($row)){
         <span id="currentTime" class="time"></span><span id="Time" class="time"></span>
     </div>
 </div>
+*/
