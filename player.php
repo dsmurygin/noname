@@ -26,7 +26,7 @@ else if (isset($_REQUEST['book'])){
     }
 }
 
-if (count($query) == 1){
+if (isset($query)){
     $query = $query[0];
     $authors = new authors();
     $authors = $authors->getlistAuthors($query->book_id);

@@ -10,6 +10,8 @@ $content = [];
 $content ['title'] = $data->title;
 $content ['description'] = $data->description;
 $content ['keywords'] = $data->keywords;
+$content ['eof'] = $data->eof;
+$content ['found'] = $data->found;
 
 if (isset($INDEX)){
     ob_start();
