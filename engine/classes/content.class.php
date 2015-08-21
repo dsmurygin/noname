@@ -37,10 +37,13 @@ else{
 
     public function __construct()
     {
+        $this->title = '';
+        $this->description = '';
+        $this->keywords = '';
         if (isset($_REQUEST['page'])) {
-            $this->pageQuery = ' LIMIT ' . (((int)$_REQUEST['page'] - 1) * 10) . ',10';
+            $this->pageQuery = ' LIMIT ' . (((int)$_REQUEST['page']) * 10) . ',10';
         } else {
-            $this->pageQuery = ' LIMIT 0,15';
+            $this->pageQuery = ' LIMIT 0,10';
         }
 
         if (isset($_REQUEST['book'])){
@@ -59,6 +62,9 @@ else{
             $this->content = $db->query('SELECT * FROM books b, publishers p, category c, books_category bc
                         WHERE b.publisher_id = p.publisher_id AND bc.category_id = c.category_id AND bc.book_id = b.book_id AND c.category_url = :category
                         ORDER BY b.book_priority DESC' . $this->pageQuery, [':category' => $_REQUEST['category']]);
+            $this->title = 'Аудиокниги по жанру ' . $this->content[0]->category_name . ' слушать онлайн';
+            $this->description .= '- аудиокниги по жанру ' . $this->content[0]->category_name;
+            $this->keywords .= ', жанр , ' . $this->content[0]->category_name;
         }
 
         else if (isset($_REQUEST['author'])){
