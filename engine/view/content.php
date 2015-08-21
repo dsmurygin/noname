@@ -62,3 +62,4 @@
     </div>
 </div>
 <?php endforeach ?>
+<div class="cleaner"></div>

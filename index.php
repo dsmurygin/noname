@@ -8,7 +8,7 @@ $INDEX = true;
 require_once __DIR__ . '/function.php';
 db::connect();
 
-$content = include('showContent.php');
+include('showContent.php');
 
 $categories = getAllCategories();
 $top20 = getTop20();
