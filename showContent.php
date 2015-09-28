@@ -34,9 +34,16 @@ else if (isset($_REQUEST['publisher']) && empty($_REQUEST['publisher'])){
     ob_end_clean();
 }
 
-else if (isset($_REQUEST['book'])){
+else if (isset($_REQUEST['book']) && !isset($_REQUEST['onPageLoad'])){
     ob_start();
     include __DIR__ . '/engine/view/book.php';
+    $content['content'] = ob_get_contents();
+    ob_end_clean();
+}
+
+else if (isset($_REQUEST['book']) && isset($_REQUEST['onPageLoad'])){
+    ob_start();
+    include __DIR__ . '/engine/view/middlePost.php';
     $content['content'] = ob_get_contents();
     ob_end_clean();
 }
