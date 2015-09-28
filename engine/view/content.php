@@ -56,6 +56,9 @@
         <b>Автор: </b><?= $authors ?><br>
         <b>Озвучил: </b><?= $voices ?><br>
         <b>Издательство: </b><a href="/publisher/<?= $post->publisher_url ?>" onclick="showContent('publisher','<?= $post->publisher_url ?>','');return false"><?= $post->publisher_name ?></a><br>
+        <?php if($post->book_cycle): ?>
+        <b>Цыкл: </b><br>
+        <?php endif ?>
         <b>Год: </b><a href="/year/<?= $post->book_year ?>" onclick="showContent('year','<?= $post->book_year ?>','');return false"><?= $post->book_year ?></a><br>
         <b>Длительность: <?= $post->voice_time ?></b><br>
         <p ><b>Описание: </b><?= $description ?></p>
