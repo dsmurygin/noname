@@ -36,13 +36,17 @@ foreach ($post->voices as $voice){
     <div class="post_title">
         <h2><a href="/book/<?= $post->book_url ?>" onclick="showContent('book','<?= $post->book_url ?>','','<?= $post->book_id ?>');return false"><?= $post->listAuthors ?> «<?= $post->book_name?>»</a></h2>
     </div>
-    <div class="bookPlay" onclick="playBook('<?= $post->book_id ?>','<?= $post->book_url ?>','<?= $post->listAuthors ?> - <?= $post->book_name ?>')">
-        <div class="bookControls">
+    <div class="bookPlay">
+        <div class="bookControls" onclick="playBook('<?= $post->book_id ?>','<?= $post->book_url ?>','<?= $post->listAuthors ?> - <?= $post->book_name?>')">
             <div class="bookPlayIcon">
                 <img src="/images/bookPlayIcon.png" alt=""/>
             </div>
+            <img src="/books/images/<?= $post->book_url ?>.jpg" alt="Аудиокнига <?= $post->listAuthors ?> - <?= $post->book_name?>"/>
+            <a>Слушать онлайн</a>
         </div>
-        <img src="/books/images/<?= $post->book_url ?>.jpg" alt="Аудиокнига <?= $post->listAuthors ?> - <?= $post->book_name ?>" title="Аудиокнига <?= $post->listAuthors ?> - <?= $post->book_name ?>" />
+        <?php if (file_exists('books/torrent/'.$post->book_url.'.torrent')):?>
+            <a href = "/books/torrent/<?= $post->book_url ?>.torrent " download="<?= $post->book_url ?>.torrent" rel="nofollow">Скачать .torrent</a>
+        <?php endif ?>
     </div>
     <div class="info">
         <b>Жанр: </b><?= $categories ?><br>
